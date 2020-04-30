@@ -5,11 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+import guru.springframework.other.OtherController;
 import guru.springframework.sfgdi.controllers.I18nController;
 import guru.springframework.sfgdi.controllers.MyController;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"guru.springframework.other", "guru.springframework.sfgdi"})
 public class SfgDiApplication {
 	
 	private static final Logger log = LoggerFactory.getLogger(SfgDiApplication.class);
@@ -24,6 +27,10 @@ public class SfgDiApplication {
 		I18nController i18nController = (I18nController)ctx.getBean("i18nController");
 		String i18nMsg = i18nController.sayHello();
 		log.info(i18nMsg);
+		
+		OtherController otherController = (OtherController)ctx.getBean("otherController");
+		String testMsg = otherController.test();
+		log.info(testMsg);
 	}
 
 }
