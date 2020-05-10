@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 import guru.springframework.other.OtherController;
+import guru.springframework.sfgdi.beans.CountryDataBean;
 import guru.springframework.sfgdi.beans.UserDataBean;
 import guru.springframework.sfgdi.controllers.I18nController;
 import guru.springframework.sfgdi.controllers.MyController;
@@ -36,6 +37,9 @@ public class SfgDiApplication {
 		// Properies
 		UserDataBean dataBean = (UserDataBean)ctx.getBean(UserDataBean.class);
 		log.info(dataBean.toString());
+		
+		CountryDataBean countryDataBean = (CountryDataBean)ctx.getBean(CountryDataBean.class);
+		log.info(countryDataBean.toString());
 		
 		// Read value from enviroment variables
 		String javaHome = (String)ctx.getBean("javaHomeValue");
