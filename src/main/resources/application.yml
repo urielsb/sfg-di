@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active:
+    - EN
+custom:
+  value: Value from application properties
