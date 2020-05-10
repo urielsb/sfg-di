@@ -36,6 +36,10 @@ public class SfgDiApplication {
 		// Properies
 		UserDataBean dataBean = (UserDataBean)ctx.getBean(UserDataBean.class);
 		log.info(dataBean.toString());
+		
+		// Read value from enviroment variables
+		String javaHome = (String)ctx.getBean("javaHomeValue");
+		log.info(javaHome);
 	}
 
 }
