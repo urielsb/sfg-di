@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 import guru.springframework.other.OtherController;
+import guru.springframework.sfgdi.beans.UserDataBean;
 import guru.springframework.sfgdi.controllers.I18nController;
 import guru.springframework.sfgdi.controllers.MyController;
 
@@ -31,6 +32,10 @@ public class SfgDiApplication {
 		OtherController otherController = (OtherController)ctx.getBean("otherController");
 		String testMsg = otherController.test();
 		log.info(testMsg);
+		
+		// Properies
+		UserDataBean dataBean = (UserDataBean)ctx.getBean(UserDataBean.class);
+		log.info(dataBean.toString());
 	}
 
 }
