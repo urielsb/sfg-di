@@ -28,6 +28,9 @@ public class PropertyConfig {
 	@Value("${country.code}")
 	private String countryCode;
 	
+	@Value("${custom.value}")
+	private String customValue;
+	
 	@Autowired
 	private Environment env;
 	
@@ -44,5 +47,10 @@ public class PropertyConfig {
 	@Bean("javaHomeValue")
 	public String javaHomeValue() {
 		return env.getProperty("JAVA_HOME");
+	}
+	
+	@Bean("customValue")
+	public String getCustomValue() {
+		return this.customValue;
 	}
 }

@@ -41,6 +41,10 @@ public class SfgDiApplication {
 		CountryDataBean countryDataBean = (CountryDataBean)ctx.getBean(CountryDataBean.class);
 		log.info(countryDataBean.toString());
 		
+		// Read from Spring Boot application properties
+		String customValue = (String)ctx.getBean("customValue");
+		log.info(customValue);
+		
 		// Read value from enviroment variables
 		String javaHome = (String)ctx.getBean("javaHomeValue");
 		log.info(javaHome);
